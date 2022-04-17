@@ -32,7 +32,7 @@ text.innerHTML = `<h2>Name: ${res.data[num].name}</h2>
                <p>How fat is this cup? ${res.data[num].radius} </p>
                <p>How long is this cup ${res.data[num].length} inches </p>
                <p>Color: ${res.data[num].color} </p>`
-               CupsStuff.appendChild(Text)}
+               CupsStuff.appendChild(text)}
 let CupsStuff = document.getElementById('CupStuff')
 // New Advanced Get 
 let correct = document.getElementById('Correct')
@@ -46,7 +46,7 @@ SubmitButton.addEventListener('click', (e) => {e.preventDefault()
                .then((res, req) => {console.log(res.data)
                     console.log(res.data[0])
                console.log(res.data.length)
-               console.log(text.innerHTML)
+               console.log(document.getElementById('div')                   )
                for(let i = 0; i < res.data.length;i++){AddingConted(res, i)}
     
 
