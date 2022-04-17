@@ -10,9 +10,10 @@
     {  
         "id": 2,
         "radius": 90,
-        "name" : "DevCup",
-        "HasStraw" : true,
-        "length": 7,
+        "name" : "JUG",
+        "HasStraw" : false,
+        "length": 97,
         "color":"blue"
     }
+   
 ]

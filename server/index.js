@@ -55,7 +55,14 @@ res.status(200).send(CupsFile)
 }
 app.post('/api/Cups' , AddingCups)
 
+app.delete(`/api/Cups/:id`, (req,res) => {
+  const {id} = req.params
+  let index = CupsFile.findIndex(cups => cups.id === +id)
+  CupsFile.splice(index,1)
+  cl(CupsFile, `We Trashed ${id}`)
+  res.status(200).send(CupsFile)
 
+})
 
 
 app.listen(4000, () => console.log("Server running on 4000"));
