@@ -42,25 +42,30 @@ app.get('/api/Cups', (require, res) => {
 
 
 AddingCups  = (req, res) => {
-  let {name, HasStraw, length , color} = req.body
+  let {name, HasStraw, radius, length , color,id} = req.body
   let newCup = {
     name,
     HasStraw,
     length,
+    radius,
     color,
-    Id
+    id
+    
   }
+  cl(newCup)
 CupsFile.push(newCup)
+
 res.status(200).send(CupsFile)
 }
-app.post('/api/Cups' , AddingCups)
+app.post('/api/CupAdd' , AddingCups)
 
 app.delete(`/api/Cups/:id`, (req,res) => {
   const {id} = req.params
-  let index = CupsFile.findIndex(cups => cups.id === +id)
-  CupsFile.splice(index,1)
-  cl(CupsFile, `We Trashed ${id}`)
-  res.status(200).send(CupsFile)
+    CupsFile.splice(id ,1)
+   //cl(`We've deleted the ${id} in the cupsfile list, which subtracts 
+  //the new length by 1 so in you have to bring the server back  `)
+    res.status(200).send(CupsFile)
+    
 
 })
 

@@ -5,7 +5,7 @@
     "name" : "DevCup",
     "HasStraw" : true,
     "length": 7,
-    "color":"blue"
+    "color":"light-blue"
     },
     {  
         "id": 2,
@@ -14,6 +14,24 @@
         "HasStraw" : false,
         "length": 97,
         "color":"blue"
+    }
+    ,
+    {  
+        "id": 3,
+        "radius": 10,
+        "name" : "glass-cup",
+        "HasStraw" : false,
+        "length": 10,
+        "color":"clear"
+    }
+    ,
+    {  
+        "id": 4,
+        "radius": 90,
+        "name" : "Joely-Special-Cup",
+        "HasStraw" : true,
+        "length": 30,
+        "color":"red"
     }
    
 ]
