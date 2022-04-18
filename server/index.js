@@ -1,5 +1,4 @@
 const cl = (TheThingYouWantToConsoleLog) => {console.log(TheThingYouWantToConsoleLog)}
-
 const express = require("express");
 const cors = require("cors");
 const CupsFile = require('./Cups.json')
@@ -28,19 +27,12 @@ app.get("/api/inspire", (required, res) => {
           let rN = Math.floor(Math.random() * InspireingThing.length)
           res.status(200).send(InspireingThing[rN])
 }
-) // new get  
-// needs a delete /* Thinking about making the delete button for all the stuff up there, so like it deletes the compliment functionality and changes the page completely  */ 
-// need a put 
-// need a post 
+) // new get
 app.get('/api/Cups', (require, res) => {
 
   
  res.status(200).send(CupsFile)
-})
-
-
-
-
+}) //3rd get
 AddingCups  = (req, res) => {
   let {name, HasStraw, radius, length , color,id} = req.body
   let newCup = {
@@ -58,7 +50,7 @@ CupsFile.push(newCup)
 res.status(200).send(CupsFile)
 }
 app.post('/api/CupAdd' , AddingCups)
-
+//post completed 
 app.delete(`/api/Cups/:id`, (req,res) => {
   const {id} = req.params
     CupsFile.splice(id ,1)
@@ -67,7 +59,8 @@ app.delete(`/api/Cups/:id`, (req,res) => {
     res.status(200).send(CupsFile)
     
 
-})
+}) // delete completed 
 
 
+//Needs an edit 
 app.listen(4000, () => console.log("Server running on 4000"));

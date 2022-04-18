@@ -98,7 +98,6 @@ Addbutton.addEventListener('click', e => {
           length:nCL,
           color: nCC,
           id: globalID
-          
 }
 axios
 .post('http://localhost:4000/api/CupAdd',newCup)
@@ -111,4 +110,4 @@ axios
  
 cl(newCup)
 
-})
+}) // Magic right here 
